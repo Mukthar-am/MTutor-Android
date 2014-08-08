@@ -1,0 +1,89 @@
+#Ignore Idea generated files
+*.iws
+workspace.xml
+tasks.xml
+
+.idea
+*.iml
+
+#Old-style Idea project files
+*.ipr
+
+#Ignore Maven generated files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+
+#Ignore Eclipse generated files
+bin/**
+tmp/**
+.classpath
+.settings/
+
+#java specific
+*.class
+
+#generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# packages and binaries:
+*.war
+
+# because they contain machine-dependent info and should not be committed
+*.classpath
+*.settings
+
+# vim temp files:
+*.swp
+
+# mergetool files
+*.orig
+
+# reports
+*.html
+
+# Generated for user in Xcode.
+UserInterfaceState.xcuserstate
+**/*/xcuserdata/*
+
+# directory patterns:
+# never commit binaries, build artifacts, logs or reports:
+.metadata/
+bin/
+target/
+bin/
+logs/
+surefire-reports/
+reports/
+#classes/
+#classes/conf/
+*.class
+
+*/target
+*/.classpath
+*/.settings
+*/test-output
+
+*/*/target
+*/*/.classpath
+*/*/.settings
+*/*/test-output
+
+# intellij project files
+*.iml
+*.idea
+.idea
+
+AdroitS2SWrapper/src/alerts
+AdroitS2SWrapper/src/s2supload
+
+#ignore ltvfeedback tool unwanted files
+LTVFeedback/src/alerts
+LTVFeedback/src/ltvdata
+
