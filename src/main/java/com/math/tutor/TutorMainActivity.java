@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import com.math.tutor.fragments.GeoFragment;
+import com.math.tutor.fragments.HelpFragment;
+import com.math.tutor.fragments.MathsFragment;
 
 public class TutorMainActivity extends Activity {
 
@@ -23,6 +26,7 @@ public class TutorMainActivity extends Activity {
      * previously being shut down then this Bundle contains the data it most
      * recently supplied in onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
      */
+
 
     public String[] mNavigationDrawerItemTitles;
     public DrawerLayout mDrawerLayout;
@@ -46,9 +50,9 @@ public class TutorMainActivity extends Activity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[3];
-        drawerItem[0] = new ObjectDrawerItem(R.drawable.ic_action_copy, "Create");
-        drawerItem[1] = new ObjectDrawerItem(R.drawable.ic_action_refresh, "Read");
-        drawerItem[2] = new ObjectDrawerItem(R.drawable.ic_action_share, "Help");
+        drawerItem[0] = new ObjectDrawerItem(R.drawable.ic_maths, "Maths");
+        drawerItem[1] = new ObjectDrawerItem(R.drawable.ic_geography, "Geography");
+        drawerItem[2] = new ObjectDrawerItem(R.drawable.ic_help, "Help");
 
         DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(
             this, R.layout.listview_item_row, drawerItem);
@@ -70,12 +74,14 @@ public class TutorMainActivity extends Activity {
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 getActionBar().setTitle(mTitle);
+                invalidateOptionsMenu();
+
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                setTitle(mNavigationDrawerItemTitles[1]);
+                getActionBar().setTitle("Chose your tutor...");
             }
         };
 
@@ -83,8 +89,6 @@ public class TutorMainActivity extends Activity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
-
-
 
     }
 
@@ -98,6 +102,7 @@ public class TutorMainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
+            //setTitle(mNavigationDrawerItemTitles[1]);
             return true;
         }
 
@@ -140,14 +145,14 @@ public class TutorMainActivity extends Activity {
 
             switch (position) {
                 case 0:
-                    fragment = new CreateFragment();
+                    fragment = new MathsFragment();
                     break;
-                //            case 1:
-                //                fragment = new ReadFragment();
-                //                break;
-                //            case 2:
-                //                fragment = new HelpFragment();
-                //                break;
+                case 1:
+                    fragment = new GeoFragment();
+                    break;
+                case 2:
+                    fragment = new HelpFragment();
+                    break;
 
                 default:
                     break;

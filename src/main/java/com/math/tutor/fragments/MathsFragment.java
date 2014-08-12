@@ -1,17 +1,18 @@
-package com.math.tutor;
+package com.math.tutor.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.math.tutor.R;
 
 /**
  * Created by mukthar.ahmed on 11/08/14.
  */
-public class CreateFragment extends Fragment {
+public class MathsFragment extends Fragment {
 
-    public CreateFragment() {
+    public MathsFragment() {
     }
 
     @Override
